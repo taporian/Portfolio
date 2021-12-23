@@ -1,23 +1,25 @@
-import logo from './logo.svg';
-import './App.css';
+
+import './App.css'
+
+import About from './pages/About';
+import Header from './pages/Header';
+import 'bootstrap/dist/css/bootstrap.min.css'; 
+import './fonts/mdi/css/materialdesignicons.css'
+import ScrollToTop from './components/ScrollToTop';
+import Portfolio from './pages/Portfolio';
+
+
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="overflow-wrap">
+            
+             <Header />       
+             <About/>
+             <Portfolio/>
+             <ScrollToTop/>
+    
+           
     </div>
   );
 }
