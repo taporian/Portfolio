@@ -91,7 +91,7 @@ export default function Portfolio({handlePortfolio}) {
         <div  className="header waypoint" data-animation="slide-in-right">
           PROJECTS
         </div>
-        {console.log('ref',ref)}
+       
         <div
           className="header-bar waypoint"
           data-animation="slide-in-right"

@@ -33,7 +33,7 @@ export default function Contact({handleContact}) {
             toast.success('Your Email has been successfully sent')
         }, (error) => {
           toast.error('Something went wrong')
-            console.log(error.text);
+          
         });
     };
 

@@ -45,7 +45,7 @@ export default function Navbar({isAbout,inHome,isContact,isPortfolio}) {
          
     return (
             <nav className={`flex ${navbarClasses.join(" ")}`}>
-        {console.log('width',width)}
+       
          
             <div className="link-wrap">
               <div onClick={()=>{scrollToSection("home")}} className={inHome ? "underline-navbar": "nav-submenu" } >home</div>

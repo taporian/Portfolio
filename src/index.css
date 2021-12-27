@@ -1,13 +1,63 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
-    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+@font-face {
+  font-family: "Raleway";
+  src: local("Raleway-Regular"),
+    url("./fonts/Raleway-Regular.ttf") format("ttf");
+}
+@font-face {
+  font-family: "Raleway-Semibold";
+  src: local("Raleway-SemiBold"),
+    url("./fonts/Raleway-SemiBold.ttf") format("ttf");
+}
+@font-face {
+  font-family: "Raleway-Bold";
+  src: local("Raleway-Bold"), url("./fonts/Raleway-Bold.ttf") format("ttf");
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+  font-family: Raleway, source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
+}
+.alice-carousel__dots {
+  display: none;
+  color: #0bc2c9;
+}
+.alice-carousel__prev-btn {
+  position: absolute;
+  top: 5rem;
+  width: auto;
+  font-size: 3rem;
+  opacity: 0.6;
+}
+.alice-carousel__next-btn {
+  position: absolute;
+  top: 5rem;
+  width: auto;
+  font-size: 3rem;
+  opacity: 0.6;
+}
+.alice-carousel__prev-btn:hover,
+.alice-carousel__next-btn:hover {
+  opacity: 1;
+}
+.alice-carousel__prev-btn-item,
+.alice-carousel__next-btn-item {
+  color: #0bc2c9;
+}
+.alice-carousel__prev-btn-item:hover,
+.alice-carousel__next-btn-item:hover {
+  color: #e3196d;
+}
+
+.alice-carousel__next-btn {
+  right: 0;
+  color: #0bc2c9;
+}
+
+.slider-img {
+  border: 1px solid rgb(236, 231, 231);
+  border-radius: 2rem;
+  width: 10rem;
+  padding: 1rem;
+  margin-left: 1rem;
+  margin-top: 2rem;
 }
