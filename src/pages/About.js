@@ -1,15 +1,28 @@
 import React from 'react'
 import chris from '../img/me.png'
-export default function About() {
+import { useInView } from 'react-intersection-observer'
+import SliderFront from '../components/SliderFront';
+import SliderBack from '../components/SliderBack';
+
+
+export default function About({handleAbout}) {
+  const { ref, inView,  } = useInView({
+
+    threshold: 0,
+  });
+  handleAbout(inView);
     return (
-        <section id="about">
+    
+ 
+        <section  ref={ref}   id="about">
+   
         <div className="container flex">
           <div className="header waypoint" data-animation="slide-in-left">
             ABOUT
           </div>
           <div
             className="header-bar waypoint"
-            className-animation="slide-in-left"
+            animation="slide-in-left"
             data-delay=".5s"
           ></div>
 
@@ -89,9 +102,9 @@ export default function About() {
               className="flex flex-50-gt-sm waypoint"
               data-animation="slide-in-left"
             >
-             <center> <img src={chris} className="me" /> </center>
+             <center> <img src={chris} alt='me' className="me" /> </center>
             
-              <div class="label bold">Who's this guy?</div>
+              <div class="label bold">BIO</div>
               <div className="text">
                 I'm a full-stack Developer 
                 in Beirut, Lebanon.
@@ -105,126 +118,29 @@ export default function About() {
                 > */}
               </div>
             </div>
+           
+{/* ////////////// */}
 
             <div class="flex flex-50-gt-sm waypoint">
-                <div className="skill">
-        <div class="skills-bar">
-          <div class="bar">
-            <div class="info">
-              <span>HTML</span>
-            </div>
-            <div class="progress-line" ><span class="html"></span></div>
-          
-          </div>
-          <div class="bar">
-              <div class="info">
-                <span>CSS</span>
+            <div class="label bold">
+              Front-end
               </div>
-              <div class="progress-line"><span class="css"></span></div>
-             
-            </div>
-          <div class="bar">
-                <div class="info">
-                  <span>REACT</span>
-                </div>
-                <div class="progress-line"><span class="bootstrap"></span></div>
-                
+            <SliderFront/>
+            <div class="label bold">
+              Back-end
               </div>
-          <div class="bar">
-                  <div class="info">
-                    <span>LARAVEL</span>
-                  </div>
-                  <div class="progress-line">
-                    <span class="javascript"></span>
-                  </div>
-                  
-                </div>
-                <div class="bar">
-                    <div class="info">
-                      <span>NODE.JS</span>
-                    </div>
-                    <div className="progress-line"><span className="c"></span></div>
-                  </div>
-        </div>
-        </div>
+            <SliderBack/>
       </div>
-            {/* <div
-              className="flex flex-50-gt-sm waypoint bars-wrap"
-              data-animation="slide-in-right"
-            >
-              <div className="bar flex">
-                <div className="bar fill" style={{width:"90%"}}>
-                  <div className="tag bold flex">CSS</div>
-                </div>
-                <span>90%</span>
-              </div>
-
-              <div className="bar flex">
-                <div className="bar fill" style={{width:"90%"}}>
-                  <div className="tag bold flex">HTML</div>
-                </div>
-                <span>90%</span>
-              </div>
-
-              <div className="bar flex">
-                <div className="bar fill"  style={{width:"80%"}}>
-                  <div className="tag bold flex">React</div>
-                </div>
-                <span>80%</span>
-              </div>
-
-              <div className="bar flex">
-                <div className="bar fill" style={{width:"80%"}}>
-                  <div className="tag bold flex">JavaScript</div>
-                </div>
-                <span>80%</span>
-              </div>
-
-              <div className="bar flex">
-                <div className="bar fill" style={{width:"50%"}}>
-                  <div className="tag bold flex">Angular</div>
-                </div>
-                <span>50%</span>
-              </div>
-
-              <div className="bar flex">
-                <div className="bar fill" style={{width:"65%"}}>
-                  <div className="tag bold flex">Node.js</div>
-                </div>
-                <span>65%</span>
-              </div>
-
-              <div className="bar flex">
-                <div className="bar fill" style={{width:"50%"}}>
-                  <div className="tag bold flex">Ruby/Rails</div>
-                </div>
-                <span>65%</span>
-              </div>
-
-              <div className="bar flex">
-                <div className="bar fill" style={{width:"50%"}}>
-                  <div className="tag bold flex">UI Design</div>
-                </div>
-                <span>50%</span>
-              </div>
-
-              <div className="bar flex">
-                <div className="bar fill" style={{width:"60%"}}>
-                  <div className="tag bold flex">Photoshop</div>
-                </div>
-                <span>60%</span>
-              </div>
-
-              <div className="bar flex">
-                <div className="bar fill" style={{width:"50%"}}>
-                  <div className="tag bold flex">Sketch</div>
-                </div>
-                <span>50%</span>
-              </div>
-            </div> */}
+    {/* //////////////     */}
+   
           </div>
+        
         </div>
+   
       </section>
+     
+
 
     )
+   
 }

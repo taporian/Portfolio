@@ -1,14 +1,97 @@
-import React from 'react'
-// import '../style/protfolio.css';
+
+import React,{useState} from 'react'
+import { useInView } from 'react-intersection-observer';
+
 import Card from '../components/Card'
 
 
-export default function Portfolio() {
+
+export default function Portfolio({handlePortfolio}) {
+
+  const { ref, inView } = useInView({
+    /* Optional options */
+    threshold: 0,
+  });
+  handlePortfolio(inView);
+
+  const [isAllFilter, setisAllFilter] = useState(true);
+  const [isNode, setIsNode] = useState(false);
+  const [isLaravel, setIsLaravel] = useState(false);
+  const [isNative, setIsNative] = useState(false);
+  const [isWordpress, setIsWordpress] = useState(false);
+
+  const ToggleClass = (e) => {
+
+    if(e.currentTarget.id ==='filter-all'){
+      setisAllFilter(true);
+      setIsLaravel(false);
+      setIsNode(false);
+      setIsNative(false);
+      setIsWordpress(false)
+    }
+  else  if (e.currentTarget.id  ==='filter-rail') {
+    setisAllFilter(false);
+    setIsLaravel(false);
+    setIsNode(false);
+    setIsNative(false);
+    setIsWordpress(false)
+    }
+    else if (e.currentTarget.id  ==='filter-laravel') {
+ 
+      setisAllFilter(false);
+      setIsLaravel(true);
+      setIsNode(false);
+      setIsNative(false);
+      setIsWordpress(false)
+    }
+    else if (e.currentTarget.id  ==='filter-node') {
+ 
+      setisAllFilter(false);
+      setIsLaravel(false);
+      setIsNode(true);
+      setIsNative(false);
+      setIsWordpress(false)
+    }
+    else if (e.currentTarget.id  ==='filter-native') {
+ 
+      setisAllFilter(false);
+      setIsLaravel(false);
+      setIsNode(false);
+      setIsNative(true);
+      setIsWordpress(false)
+    }
+    else if (e.currentTarget.id  ==='filter-wordpress') {
+ 
+      setisAllFilter(false);
+      setIsLaravel(false);
+      setIsNode(false);
+      setIsNative(false);
+      setIsWordpress(true) 
+  }
+  else{
+    setisAllFilter(false);
+    setIsLaravel(false);
+    setIsNode(false);
+    setIsNative(false);
+    setIsWordpress(false)
+  }
+}
+
+
+
+
+  
+
+
     return (
-        <section className="flex" id="portfolio">
-        <div className="header waypoint" data-animation="slide-in-right">
+  <>
+  
+        <section className="flex" ref={ref}  id="portfolio">
+        
+        <div  className="header waypoint" data-animation="slide-in-right">
           PROJECTS
         </div>
+        {console.log('ref',ref)}
         <div
           className="header-bar waypoint"
           data-animation="slide-in-right"
@@ -16,41 +99,21 @@ export default function Portfolio() {
         ></div>
         <div className="flex container w-60">
          <div className="flex row">
-            <div className="filter" data-filter="all">ALL</div>
-            <div className="filter" data-filter=".rails">RUBY/RAILS</div>
-            <div className="filter" data-filter=".react">REACT-JS</div>
-            <div className="filter" data-filter=".js">JAVASCRIPT</div>         
+            <div onClick={ToggleClass} id="filter-all" className={isAllFilter ? "filter-toggle":"filter"} data-filter="all">ALL</div>
+            <div data-filter=".rails" onClick={ToggleClass}  id="filter-node" className={isNode ? "filter-toggle":"filter"} >REACT-JS/NODE</div>
+            <div onClick={ToggleClass}  id="filter-laravel"  className={isLaravel ? "filter-toggle":"filter"}  data-filter=".react">REACT-JS/LARAVEL</div>
+            <div onClick={ToggleClass}  id="filter-native" className={isNative ? "filter-toggle":"filter"}  data-filter=".js">REACT-NATIVE</div>
+            <div onClick={ToggleClass}  id="filter-wordpress" className={isWordpress ? "filter-toggle":"filter"}  data-filter=".js">WORDPRESS</div>   
+                      
           </div>
           <br/>
-<Card/>
+<Card isAllFilter={isAllFilter} isNode={isNode}  isLaravel={isLaravel} isNative={isNative} isWordpress={isWordpress} />
 
-          {/* <div className="d-flex flex-wrap justify-content-between position-relative">
-          <div className="card transition">
-  <h2 className="transition h2_card">Awesome Headline</h2>
-  <p className="p_card">Aenean lacinia bibendum nulla sed consectetur. Donec ullamcorper nulla non metus auctor fringilla.</p>
-  <div className="cta-container transition"><a href="#" class="cta">Call to action</a></div>
-  <div className="card_circle transition"></div>
 </div>
-<div className="card transition">
-  <h2 className="transition h2_card">Awesome Headline</h2>
-  <p className="p_card">Aenean lacinia bibendum nulla sed consectetur. Donec ullamcorper nulla non metus auctor fringilla.</p>
-  <div className="cta-container transition"><a href="#" class="cta">Call to action</a></div>
-  <div className="card_circle transition"></div>
-</div>
-<div className="card transition">
-  <h2 className="transition h2_card">Awesome Headline</h2>
-  <p className="p_card">Aenean lacinia bibendum nulla sed consectetur. Donec ullamcorper nulla non metus auctor fringilla.</p>
-  <div className="cta-container transition"><a href="#" class="cta">Call to action</a></div>
-  <div className="card_circle transition"></div>
-</div>
-<div className="card transition">
-  <h2 className="transition h2_card">Awesome Headline</h2>
-  <p className="p_card">Aenean lacinia bibendum nulla sed consectetur. Donec ullamcorper nulla non metus auctor fringilla.</p>
-  <div className="cta-container transition"><a href="#" class="cta">Call to action</a></div>
-  <div className="card_circle transition"></div>
-</div>
-</div> */}
-</div>
+
       </section>
+    </>
+  
+     
     )
 }

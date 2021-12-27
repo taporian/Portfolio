@@ -4,7 +4,9 @@
   width: 100%;
   justify-content: center;
   flex-direction: row;
-  gap: 10px;
+  /* gap: 1rem; */
+  column-gap: 4rem;
+  row-gap: 2rem;
 }
 
 .card {
@@ -100,6 +102,6 @@
   transition: 0.4s ease;
 }
 .card .info .button_card:hover {
-  background: dodgerblue;
+  background: #e31b6e;
   color: white;
 }
