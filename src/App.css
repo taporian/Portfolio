@@ -1812,9 +1812,11 @@ section:nth-of-type(3) .filter-toggle {
   text-transform: uppercase;
   cursor: pointer;
   transition: 0.3s ease-out 0s;
+  font-size: 1rem !important;
 }
 
 .underline-navbar2 {
+  font-size: 1rem !important;
   cursor: pointer;
   text-transform: uppercase;
   padding: 1rem;
