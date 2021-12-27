@@ -2,7 +2,7 @@ import React from 'react';
 import AliceCarousel from 'react-alice-carousel';
 import 'react-alice-carousel/lib/alice-carousel.css';
 import jest from '../img/slider/jest.png';
-import redux from '../img/slider/redux.webp';
+import redux from '../img/slider/redux.png';
 import react from '../img/slider/React.png';
 import html from '../img/slider/HTML5.png';
 import styled from '../img/slider/Styled_components.png';
@@ -26,7 +26,7 @@ const items = [
     </div>
     </>,
     <>
-    <img src={redux} className="slider-img" alt="jest"/>
+    <img src={redux} className="slider-img" alt="redux"/>
     <div className='label light'>
         Redux
     </div>

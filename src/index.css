@@ -21,17 +21,19 @@ code {
   display: none;
   color: #0bc2c9;
 }
-.alice-carousel__prev-btn {
+
+.alice-carousel__next-btn {
   position: absolute;
   top: 5rem;
   width: auto;
   font-size: 3rem;
   opacity: 0.6;
 }
-.alice-carousel__next-btn {
+.alice-carousel__prev-btn {
+  display: flex !important;
   position: absolute;
   top: 5rem;
-  width: auto;
+  max-width: 1rem !important;
   font-size: 3rem;
   opacity: 0.6;
 }
