@@ -8,6 +8,7 @@ import Popup from "./Popup";
 import SliderLMS from "./SliderLMS";
 import ReactPlayer from "react-player/youtube";
 import PopupVideo from "./PopupVideo";
+import GLOBAL_URL from "../global/global_strings";
 
 export default function Card({
   isAllFilter,
@@ -253,7 +254,7 @@ export default function Card({
         <div className="player-wrapper">
           <ReactPlayer
             className="react-player"
-            url="https://www.youtube.com/watch?v=avXAysd6WHQ"
+            url={GLOBAL_URL.YOUTUBE_URL}
             width="100%"
             height="100%"
             controls={true}
